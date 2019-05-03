@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class HighScore : MonoBehaviour
 {
     static public int score = 1000;
-    private void Awake()
+    void Awake()
     {
         if (PlayerPrefs.HasKey("HighScore"))
         {
@@ -14,10 +14,10 @@ public class HighScore : MonoBehaviour
         PlayerPrefs.SetInt("HighScore", score);
     }
 
-    private void Update()
+    public void Update()
     {
         Text gt = this.GetComponent<Text>();
-        gt.text = "High Score: " + score;
+        gt.text = "HighScore: " + score;
 
         if (score> PlayerPrefs.GetInt("HighScore"))
         {
